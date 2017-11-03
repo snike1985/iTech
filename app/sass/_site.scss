@@ -1,0 +1,88 @@
+.site {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 320px;
+  min-height: 100vh;
+  padding: 15px;
+  background-color: #eeeeee;
+  @include HKGrotesk();
+
+  &__header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    background-color: #fff;
+  }
+
+  &__content {
+
+  }
+
+  &__footer {
+    font-size: 13px;
+    color: rgba(68, 70, 85, 0.4);
+    line-height: 2.154;
+    @include HKGrotesk-bold();
+
+    a,
+    a:visited {
+      font-size: 13px;
+      color: rgb(68, 70, 85);
+      line-height: 2.154;
+
+      &:hover {
+
+      }
+    }
+  }
+}
+@media (min-width: $phone-landscape) {
+  .site {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .site {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .site {
+
+  }
+}
+@media (min-width: $desktop) {
+  .site {
+    padding: 30px;
+
+    &__header {
+      justify-content: space-between;
+      padding: 20px calc(50% - 545px);
+
+      &-layout {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px calc(50% - 545px);
+
+      &-layout {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+@media (min-width: $desktop-hd) {
+  .site {
+    padding: 55px;
+  }
+}
+

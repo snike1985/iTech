@@ -1,0 +1,29 @@
+.hero {
+  position: relative;
+  height: calc(100vh - 15px);
+  background-color: #f8f7f7;
+  background-image: url("../img/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+@media (min-width: $phone-landscape) {
+  .hero {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .hero {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .hero {
+
+  }
+}
+@media (min-width: $desktop) {
+  .hero {
+    height: 825px;
+  }
+}
+

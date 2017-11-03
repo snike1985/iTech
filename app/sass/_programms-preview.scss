@@ -1,0 +1,76 @@
+.programms-preview {
+
+  &__list {
+
+  }
+
+  &__item {
+    display: block;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.06);
+  }
+
+  &__icon {
+
+    svg {
+      height: 100px;
+    }
+  }
+
+  &__info {
+    @include HKGrotesk-light();
+
+    span {
+      display: block;
+    }
+
+    b {
+      @include HKGrotesk-bold();
+    }
+  }
+
+  &__button {
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    line-height: 4.833;
+    @include HKGrotesk-bold();
+  }
+}
+@media (min-width: $phone-landscape) {
+  .programms-preview {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .programms-preview {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .programms-preview {
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      width: calc(50% - 25px);
+      margin-bottom: 50px;
+      padding: 60px 55px;
+      transition: background .3s ease-in-out;
+
+      &:hover {
+        background-color: rgb(131, 186, 58);
+      }
+    }
+  }
+}
+@media (min-width: $desktop) {
+  .programms-preview {
+
+  }
+}
+

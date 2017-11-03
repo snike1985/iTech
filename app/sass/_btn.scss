@@ -1,0 +1,28 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 126px;
+  height: 49px;
+  font-size: 13px;
+  color: rgb(68, 70, 85);
+  text-transform: uppercase;
+  line-height: 4.462;
+  border: 2px solid rgb(131, 186, 58);
+  border-radius: 25px;
+  transition: background .3s ease-in-out, color .3s ease-in-out;
+  @include HKGrotesk-bold();
+
+  span {
+    display: block;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: rgb(131, 186, 58);
+  }
+
+  &:active {
+
+  }
+}

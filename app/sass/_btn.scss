@@ -1,28 +1,24 @@
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 126px;
-  height: 49px;
-  font-size: 13px;
+.btn,
+a.btn,
+button.btn {
+  display: inline-block;
+  padding: 15px 20px;
+  border: 2px solid #83ba3a;
+  border-radius: 27px;
+  font-size: 14px;
   color: rgb(68, 70, 85);
   text-transform: uppercase;
-  line-height: 4.462;
-  border: 2px solid rgb(131, 186, 58);
-  border-radius: 25px;
-  transition: background .3s ease-in-out, color .3s ease-in-out;
+  line-height: normal;
   @include HKGrotesk-bold();
+  transition: color .3s ease-in-out, background .3s ease-in-out;
 
-  span {
-    display: block;
-  }
-
-  &:hover {
+  &:hover,
+  &.active {
     color: #fff;
-    background-color: rgb(131, 186, 58);
+    background-color: #83ba3a;
   }
 
   &:active {
-
+    background-color: #679130;
   }
 }

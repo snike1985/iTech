@@ -2,8 +2,7 @@
 
   img {
     display: block;
-    width: 208px;
-    height: 60px;
+    height: 30px;
   }
 }
 @media (min-width: $phone-landscape) {
@@ -24,6 +23,9 @@
 @media (min-width: $desktop) {
   .logo {
 
+    img {
+      height: 60px;
+    }
   }
 }
 

@@ -1,10 +1,65 @@
 .hero {
+  display: flex;
+  align-items: flex-end;
   position: relative;
-  height: calc(100vh - 15px);
+  min-height: calc(100vh - 75px);
+  padding: 50px 15px;
   background-color: #f8f7f7;
   background-image: url("../img/hero-bg.jpg");
   background-size: cover;
   background-position: center;
+
+  &__scroll {
+    @include absoluteCenterX();
+    bottom: 20px;
+    width: 26px;
+
+    svg {
+      width: 100%;
+      fill: #f19600;
+    }
+  }
+
+  &__content {
+    font-size: 20px;
+    color: rgb(68, 70, 85);
+    line-height: 1.238;
+    @include HKGrotesk-light();
+
+    b {
+      @include HKGrotesk-bold();
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 20px 0 0;
+
+    &:before {
+      display: block;
+      width: 80px;
+      height: 2px;
+      background-color: #f19600;
+      content: '';
+    }
+
+    a,
+    a:visited {
+      display: block;
+      font-size: 11px;
+      color: rgb(68, 70, 85);
+      text-transform: uppercase;
+      line-height: 3.625;
+      @include HKGrotesk-bold();
+      transition: color .3s ease-in-out;
+
+      &:hover {
+        color: #83b93a;
+      }
+    }
+  }
 }
 @media (min-width: $phone-landscape) {
   .hero {
@@ -23,7 +78,30 @@
 }
 @media (min-width: $desktop) {
   .hero {
-    height: 825px;
+    min-height: calc(100vh - 197px);
+    padding: 50px;
+
+    &__content {
+      max-width: 860px;
+      font-size: 42px;
+    }
+
+    &__links {
+      flex-direction: row;
+      align-items: center;
+      padding: 0;
+
+      &:before {
+        width: 160px;
+        height: 4px;
+      }
+
+      a,
+      a:visited {
+        margin-left: 59px;
+        font-size: 16px;
+      }
+    }
   }
 }
 

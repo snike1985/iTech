@@ -162,13 +162,12 @@
       font-size: 13px;
       line-height: 20px;
       color: #3e4355;
-      opacity: .6;
+      opacity: 1;
       transform: translatez(0);
-      transition: opacity .3s ease-in-out 0s;
+      transition: color .3s ease-in-out 0s;
 
       &:hover,
       &.active {
-        opacity: 1;
         color: #83b93a;
       }
     }

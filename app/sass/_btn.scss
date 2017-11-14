@@ -2,7 +2,9 @@
 a.btn,
 button.btn {
   display: inline-block;
-  padding: 15px 20px;
+  min-width: 126px;
+  padding: 14px 20px;
+  text-align: center;
   border: 2px solid #83ba3a;
   border-radius: 27px;
   font-size: 14px;

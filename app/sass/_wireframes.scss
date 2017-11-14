@@ -1,11 +1,12 @@
 .wireframes {
   display: flex;
   align-items: center;
+  justify-content: center;
 
   a,
   a:visited {
     display: block;
-    font-size: 13px;
+    font-size: 10px;
     color: rgb(68, 70, 85);
     line-height: 2.154;
     @include HKGrotesk-bold();
@@ -18,17 +19,33 @@
 }
 @media (min-width: $tablet-portrait) {
   .wireframes {
+    margin-left: 20px;
 
+    a {
+      margin-right: 10px;
+      transition: color .3s ease-in-out;
+
+      &:hover {
+        color: #ff802c;
+      }
+    }
   }
 }
 @media (min-width: $tablet-landscape) {
   .wireframes {
 
+    a {
+      font-size: 13px;
+    }
   }
 }
 @media (min-width: $desktop) {
   .wireframes {
+    margin-left: 48px;
 
+    a {
+      margin-right: 27px;
+    }
   }
 }
 

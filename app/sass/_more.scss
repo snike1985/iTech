@@ -3,9 +3,10 @@ a.more,
 button.more {
   position: relative;
   display: inline-block;
-  padding: 0 10px 0 0;
+  padding: 0 18px 0 0;
   background: none;
   font-size: 14px;
+  letter-spacing: 1.4px;
   color: rgb(68, 70, 85);
   text-transform: uppercase;
   line-height: 2.286;
@@ -28,11 +29,11 @@ button.more {
     position: absolute;
     top: 50%;
     right: 0;
-    width: 12px;
-    height: 12px;
-    margin-top: -6px;
+    width: 14px;
+    height: 14px;
+    margin-top: -7px;
     border: 2px solid #83ba3a;
-    clip: rect(0px, 12px, 9px, 3px);
+    clip: rect(0px, 14px, 11px, 3px);
     transform: rotate(45deg);
     box-sizing: border-box;
     content: '';
@@ -54,27 +55,6 @@ button.more {
     &:after {
       right: -15px
     }
-  }
-}
-.read-more {
-  position: relative;
-  display: inline-block;
-  padding: 0 10px 0 0;
-  background: none;
-  font-size: 14px;
-  color: rgb(68, 70, 85);
-  text-transform: uppercase;
-  line-height: 2.286;
-  @include HKGrotesk-bold();
-  transition: color .3s ease-in-out;
-
-  &:after {
-    @include absoluteCenterY();
-    left: calc(100% + 30px);
-    width: 232px;
-    height: 2px;
-    background-color: #ff802c;
-    content: '';
   }
 }
 @media (min-width: $phone-landscape) {

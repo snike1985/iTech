@@ -14,9 +14,9 @@
         //private properties
         var _obj = obj,
             _btn = _obj.find( '.menu__btn' ),
-            _item = _obj.find( '.menu__item' ),
             _wrap = _obj.find( '.menu__wrap' ),
-            _scrollConteiner = $( 'html' );
+            _scrollConteiner = $( 'html' ),
+            _body = $('body');
 
         //private methods
         var _addEvents = function() {
@@ -29,30 +29,6 @@
                         } else {
                             _hideMenu();
                         }
-                    }
-                });
-
-                _item.on({
-                    'click': function() {
-                        event.preventDefault();
-                        var elem = $( this ),
-                            id = elem.attr( 'href' ),
-                            way = $( id ).offset().top - $( '.site__header' ).outerHeight() + 1,
-                            duration = 1000,
-                            scrollWrap = $( 'body, html' );
-
-                        if ( !elem.hasClass( 'active' ) ) {
-                            scrollWrap.animate( { scrollTop: way }, duration );
-
-                            setTimeout( function () {
-                                scrollWrap.animate( { scrollTop: way - 1 }, 1 );
-                            }, duration );
-
-                            _item.removeClass( 'active' );
-                            elem.addClass( 'active' );
-                            _hideMenu();
-                        }
-
                     }
                 });
 
@@ -77,6 +53,7 @@
                     overflowY: 'hidden',
                     paddingRight: _getScrollWidth()
                 } );
+                _body.addClass('fixed');
             },
             _hideMenu = function() {
                 _obj.removeClass( 'active' );
@@ -87,6 +64,7 @@
                     overflowY: 'auto',
                     paddingRight: 0
                 } );
+                _body.removeClass('fixed');
             },
             _init = function() {
                 _addEvents();

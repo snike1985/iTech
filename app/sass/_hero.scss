@@ -21,6 +21,7 @@
   }
 
   &__content {
+    max-width: 500px;
     font-size: 20px;
     color: rgb(68, 70, 85);
     line-height: 1.238;
@@ -68,18 +69,8 @@
 }
 @media (min-width: $tablet-portrait) {
   .hero {
-
-  }
-}
-@media (min-width: $tablet-landscape) {
-  .hero {
-
-  }
-}
-@media (min-width: $desktop) {
-  .hero {
     min-height: calc(100vh - 197px);
-    padding: 50px;
+    padding: 50px 15px;
 
     &__content {
       max-width: 860px;
@@ -89,18 +80,41 @@
     &__links {
       flex-direction: row;
       align-items: center;
-      padding: 0;
+      padding: 26px 0 0;
 
       &:before {
         width: 160px;
-        height: 4px;
+        height: 3px;
+        margin-right: 5px;
       }
 
       a,
       a:visited {
-        margin-left: 59px;
+        margin-left: 54px;
         font-size: 16px;
+        letter-spacing: 1.6px;
       }
+    }
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .hero {
+
+  }
+}
+@media (min-width: $desktop) {
+  .hero {
+
+  }
+}
+
+@media (min-width: $desktop-hd) {
+  .hero {
+    padding: 50px calc(50% - 600px) 196px;
+
+    &__scroll {
+      bottom: 54px;
+      width: 32px;
     }
   }
 }

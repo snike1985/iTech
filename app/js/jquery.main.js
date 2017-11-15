@@ -11,6 +11,10 @@
             new Menu( $(this) );
         } );
 
+        $('.hero').each( function() {
+            new Hero( $(this) );
+        } );
+
     });
 
     var Contact = function(obj) {
@@ -287,6 +291,73 @@
                         } else {
                             _hideMenu();
                         }
+                    }
+                });
+
+            },
+            _getScrollWidth = function (){
+                var scrollDiv = document.createElement( 'div'),
+                    scrollBarWidth;
+
+                scrollDiv.className = 'scrollbar-measure';
+
+                document.body.appendChild( scrollDiv );
+
+                scrollBarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+
+                document.body.removeChild(scrollDiv);
+
+                return scrollBarWidth;
+            },
+            _showMenu = function() {
+                _obj.addClass( 'active' );
+                _scrollConteiner.css( {
+                    overflowY: 'hidden',
+                    paddingRight: _getScrollWidth()
+                } );
+                _body.addClass('fixed');
+            },
+            _hideMenu = function() {
+                _obj.removeClass( 'active' );
+                _wrap.css( {
+                    overflowY: 'hidden'
+                } );
+                _scrollConteiner.css( {
+                    overflowY: 'auto',
+                    paddingRight: 0
+                } );
+                _body.removeClass('fixed');
+            },
+            _init = function() {
+                _addEvents();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
+
+    var Hero = function(obj) {
+
+        //private properties
+        var _obj = obj,
+            _scrollBtn = _obj.find('.hero__scroll'),
+            _container = $('html, body');
+
+        //private methods
+        var _addEvents = function() {
+
+                _scrollBtn.on({
+                    'click': function() {
+                        var way = _obj.offset().top + _obj.outerHeight(),
+                            curScroll = $(window).scrollTop(),
+                            scrollingTime = 500*(way - curScroll)/way;
+
+                        _container.animate({
+                            scrollTop: way
+                        }, scrollingTime);
                     }
                 });
 

@@ -12,6 +12,13 @@
     background-color: #fff;
   }
 
+  &_main {
+
+    .site__header {
+      background-color: #fff;
+    }
+  }
+
   &__title {
     display: block;
     margin-bottom: 50px;
@@ -42,7 +49,6 @@
     width: 100%;
     z-index: 2;
     padding:  10px 20px;
-    background-color: #fff;
   }
 
   &__content {

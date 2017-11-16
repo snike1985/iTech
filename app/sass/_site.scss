@@ -14,8 +14,8 @@
 
   &__title {
     display: block;
-    margin-bottom: 102px;
-    font-size: 48px;
+    margin-bottom: 50px;
+    font-size: 30px;
     text-align: center;
     color: rgb(68, 70, 85);
     line-height: 1.208;
@@ -24,7 +24,7 @@
     span {
       display: block;
       margin-bottom: 5px;
-      font-size: 16px;
+      font-size: 14px;
       letter-spacing: 6.4px;
       color: rgb(62, 66, 85);
       text-transform: uppercase;
@@ -118,6 +118,13 @@
 @media (min-width: $desktop) {
   .site {
     padding: 30px;
+
+    &__title {
+      margin-bottom: 102px;
+      font-size: 48px;
+
+      span { font-size: 16px }
+    }
 
     &__header {
       justify-content: space-between;

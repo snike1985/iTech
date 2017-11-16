@@ -18,6 +18,11 @@ button.btn {
   &.active {
     color: #fff;
     background-color: #83ba3a;
+
+    .btn__icon {
+
+      svg { fill: #fff }
+    }
   }
 
   &:active {
@@ -36,6 +41,28 @@ button.btn {
 
     &:active {
       background-color: #fff;
+    }
+  }
+
+  &_apply {
+    display: inline-flex;
+    align-items: center;
+    height: 54px;
+    width: 160px;
+    padding-left: 41px;
+    letter-spacing: 1.4px;
+  }
+
+  &__icon {
+    position: relative;
+    top: 2px;
+    margin-left: 16px;
+
+    svg {
+      width: 22px;
+      height: 22px;
+      fill: #83ba3a;
+      transition: fill .3s ease-in-out;
     }
   }
 }

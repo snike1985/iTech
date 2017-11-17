@@ -7,8 +7,16 @@
             new Contact( $(this) );
         } );
 
+        $('.intro').each( function() {
+            new Intro( $(this) );
+        } );
+
         $('.menu').each( function() {
             new Menu( $(this) );
+        } );
+
+        $('.shareholders').each( function() {
+            new Shareholders( $(this) );
         } );
 
         $('.hero').each( function() {
@@ -330,6 +338,82 @@
             },
             _init = function() {
                 _addEvents();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
+
+    var Intro = function(obj) {
+
+        //private properties
+        var _obj = obj,
+            _description = _obj.find( '.intro__description' );
+
+        //private methods
+        var _addEvents = function() {
+
+                $(window).on({
+                    'load': function() {
+                        _setHeight();
+                    },
+                    'resize': function () {
+                        _setHeight();
+                    }
+                });
+
+            },
+            _setHeight = function() {
+               var curWidth = _description.outerWidth();
+
+                _description.css({ 'height': curWidth + 'px' });
+            },
+            _init = function() {
+                _addEvents();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
+
+    var Shareholders = function(obj) {
+
+        //private properties
+        var _obj = obj,
+        _slider = _obj.find('.swiper-container'),
+        _pagination = _obj.find('.swiper-pagination');
+
+        //private methods
+        var _addEvents = function() {
+
+                $(window).on({
+                    'load': function() {
+                        _setHeight();
+                    },
+                    'resize': function () {
+                        _setHeight();
+                    }
+                });
+
+            },
+            _setHeight = function() {
+
+            },
+            _init = function() {
+                _addEvents();
+                var swiper = new Swiper(_slider, {
+                    slidesPerView: 5,
+                    spaceBetween: 0,
+                    centeredSlides: true,
+                    loop: true,
+                    pagination: _pagination
+                });
             };
 
         //public properties

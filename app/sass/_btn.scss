@@ -53,6 +53,18 @@ button.btn {
     letter-spacing: 1.4px;
   }
 
+  &_read-more {
+    display: inline-flex;
+    align-items: center;
+    height: 54px;
+    padding-left: 41px;
+    letter-spacing: 1.4px;
+
+    .btn__icon {
+      transform: matrix(-1,0,0,1,0,0);
+    }
+  }
+
   &__icon {
     position: relative;
     top: 2px;

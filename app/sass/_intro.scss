@@ -1,0 +1,95 @@
+.intro {
+  position: relative;
+  height: calc(100vh - 15px);
+  z-index: 1;
+  background-color: #f8f7f7;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 574px;
+    z-index: 2;
+    background-image: url("../img/intro-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    content: '';
+  }
+
+  &:first-child {
+    padding-top: 120px;
+    margin-top: -60px;
+  }
+
+  &__description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 67%;
+    bottom: 15%;
+    width: 446px;
+    height: 446px;
+    padding: 50px 80px 50px 119px;
+    z-index: 1;
+    font-size: 20px;
+    color: rgb(68, 70, 85);
+    line-height: 1.5;
+    border: 2px solid #83ba3a;
+    border-radius: 50%;
+    @include HKGrotesk-light();
+  }
+
+  &__button {
+    position: absolute;
+    bottom: 73px;
+    left: calc(50% - 32px);
+    z-index: 3;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    color: rgb(68, 70, 85);
+    text-transform: uppercase;
+    line-height: 3.625;
+    transform: matrix( 0,-1,1,0,0,0);
+    @include HKGrotesk-bold();
+
+    &:before {
+      position: absolute;
+      top: 2px;
+      right: calc(100% - 22px);
+      width: 160px;
+      height: 3px;
+      background-color: rgb(241, 150, 0);
+      content: '';
+      pointer-events: none;
+    }
+  }
+}
+@media (min-width: $phone-landscape) {
+  .intro {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .intro {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .intro {
+
+  }
+}
+@media (min-width: $desktop) {
+  .intro {
+    height: calc(100vh - 55px);
+
+    &:first-child {
+      padding-top: 240px;
+      margin-top: -142px;
+    }
+  }
+}
+

@@ -1,0 +1,132 @@
+.shareholders {
+  padding: 134px calc(50% - 600px) 47px;
+  margin-bottom: 21px;
+  background-color: #fff;
+
+  &__layout {
+    display: flex;
+    margin-bottom: 27px;
+  }
+
+  &__title {
+    width: calc(100% - 784px);
+    padding-right: 48px;
+    font-size: 36px;
+    color: rgb(68, 70, 85);
+    line-height: 1.167;
+    @include HKGrotesk-light();
+
+    span {
+      display: block;
+      @include HKGrotesk-bold();
+    }
+  }
+
+  &__content {
+    width: 784px;
+    column-count: 2;
+    column-gap: 48px;
+    color: rgba(68, 70, 85, 0.6);
+    @include HKGrotesk-light();
+
+    h3 {
+      margin-bottom: 6px;
+      font-size: 18px;
+      letter-spacing: 5.6px;
+      color: rgb(68, 70, 85);
+      text-transform: uppercase;
+      line-height: 1.556;
+      @include HKGrotesk-bold();
+    }
+
+    p {
+      margin-bottom: 46px;
+      font-size: 20px;
+      line-height: 1.4;
+    }
+  }
+
+  &__logos {
+
+    .swiper-wrapper {
+      margin-bottom: 46px;
+      align-items: center;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      //align-items: center;
+      width: auto;
+      padding: 20px;
+      text-align: center;
+
+      img {
+        filter: grayscale(100%);
+        transition: filter .3s ease-in-out;
+      }
+
+      &:hover {
+
+        img { filter: grayscale(0%) }
+      }
+    }
+
+    .swiper-slide-active {
+
+      img { filter: grayscale(0%) }
+    }
+
+    .swiper-pagination {
+
+      &-bullet {
+        position: relative;
+        width: 18px;
+        height: 18px;
+        opacity: 1;
+        background: none;
+        border: 2px solid #eeeeee;
+        transition: border-color .3s ease-in-out;
+
+        &:before {
+          @include absoluteCenter();
+          width: 6px;
+          height: 6px;
+          opacity: 0;
+          background: rgb(241, 150, 0);
+          border-radius: 50%;
+          content: '';
+          transition: opacity .3s ease-in-out;
+        }
+      }
+
+      &-bullet-active,
+      &:hover {
+        border-color: rgb(241, 150, 0);
+
+        &:before { opacity: 1 }
+      }
+    }
+  }
+}
+@media (min-width: $phone-landscape) {
+  .shareholders {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .shareholders {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .shareholders {
+
+  }
+}
+@media (min-width: $desktop) {
+  .shareholders {
+
+  }
+}
+

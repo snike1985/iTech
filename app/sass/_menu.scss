@@ -109,6 +109,8 @@
     cursor: default;
     transform: translateX(100%);
     transition: all .3s ease-in-out;
+
+    .btn { margin-top: 10px }
   }
 
   &__item {
@@ -116,7 +118,7 @@
     position: relative;
     z-index: 2;
     opacity: 0;
-    font-size: 5vh;
+    font-size: 4vh;
     line-height: 8vh;
     color: #3e4355;
     text-transform: uppercase;
@@ -138,6 +140,11 @@
 }
 @media (min-width: $tablet-landscape) {
   .menu {
+
+  }
+}
+@media (min-width: $desktop) {
+  .menu {
     position: relative;
 
     &__btn { display: none }
@@ -158,13 +165,14 @@
     }
 
     &__item {
-      margin-left: 30px;
+      margin-left: 22px;
       font-size: 13px;
       line-height: 20px;
       color: #3e4355;
       opacity: 1;
       transform: translatez(0);
       transition: color .3s ease-in-out 0s;
+      letter-spacing: 1.4px;
 
       &:hover,
       &.active {
@@ -173,16 +181,15 @@
     }
 
     .btn {
-      margin-left: 30px;
+      margin-left: 22px;
     }
   }
 }
-@media (min-width: $desktop) {
+@media (min-width: $desktop-hd) {
   .menu {
 
     &__item {
       margin-left: 34px;
-      letter-spacing: 1.4px;
     }
 
     .btn {

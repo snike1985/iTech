@@ -1,53 +1,46 @@
 .intro {
   position: relative;
   height: calc(100vh - 15px);
+  min-height: 553px;
+  padding: 15px;
   z-index: 1;
   background-color: #f8f7f7;
 
   &:before {
-    position: absolute;
-    left: 0;
+    @include absoluteCenterX();
     bottom: 0;
     width: 100%;
-    height: 574px;
+    height: 210px;
+    max-height: 50%;
     z-index: 2;
     background-image: url("../img/intro-bg.png");
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    background-position: center bottom;
+    background-size: auto 100%;
     content: '';
   }
 
   &:first-child {
-    padding-top: 120px;
+    padding-top: 70px;
     margin-top: -60px;
   }
 
   &__description {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 67%;
-    bottom: 15%;
-    width: 446px;
-    height: 446px;
-    padding: 50px 80px 50px 119px;
-    z-index: 1;
-    font-size: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
     color: rgb(68, 70, 85);
     line-height: 1.5;
-    border: 2px solid #83ba3a;
-    border-radius: 50%;
     @include HKGrotesk-light();
   }
 
   &__button {
     position: absolute;
-    bottom: 73px;
+    bottom: 15px;
     left: calc(50% - 32px);
     z-index: 3;
-    font-size: 16px;
+    font-size: 10px;
     letter-spacing: 1.5px;
     color: rgb(68, 70, 85);
     text-transform: uppercase;
@@ -59,7 +52,7 @@
       position: absolute;
       top: 2px;
       right: calc(100% - 22px);
-      width: 160px;
+      width: 60px;
       height: 3px;
       background-color: rgb(241, 150, 0);
       content: '';
@@ -70,11 +63,29 @@
 @media (min-width: $phone-landscape) {
   .intro {
 
+    &:before {
+      height: 574px;
+      background-size: contain;
+    }
   }
 }
 @media (min-width: $tablet-portrait) {
   .intro {
 
+    &__description {
+      width: 446px;
+      max-width: 100%;
+      font-size: 20px;
+    }
+
+    &__button {
+      bottom: 38px;
+      font-size: 16px;
+
+      &:before {
+        width: 80px;
+      }
+    }
   }
 }
 @media (min-width: $tablet-landscape) {
@@ -85,10 +96,56 @@
 @media (min-width: $desktop) {
   .intro {
     height: calc(100vh - 55px);
+    min-height: 900px;
 
     &:first-child {
       padding-top: 240px;
       margin-top: -142px;
+    }
+
+    .site__title {
+      position: relative;
+      max-width: 875px;
+      margin: 0 auto;
+      z-index: 2;
+    }
+
+    &__description {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 70%;
+      bottom: 15%;
+      height: 346px;
+      width: 346px;
+      padding: 30px 60px 30px 100px;
+      z-index: 1;
+      font-size: 16px;
+      border: 2px solid #83ba3a;
+      border-radius: 50%;
+      text-align: left;
+      background-color: #f8f7f7;
+    }
+
+    &__button {
+      bottom: 73px;
+
+      &:before {
+        width: 160px;
+      }
+    }
+  }
+}
+@media (min-width: $desktop-hd) {
+  .intro {
+
+    &__description {
+      left: 67%;
+      height: 446px;
+      width: 446px;
+      padding: 50px 80px 50px 119px;
+      font-size: 20px;
     }
   }
 }

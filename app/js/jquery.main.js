@@ -387,33 +387,45 @@
         //private properties
         var _obj = obj,
         _slider = _obj.find('.swiper-container'),
-        _pagination = _obj.find('.swiper-pagination');
+        _pagination = _obj.find('.swiper-pagination'),
+        _swiper = null;
 
         //private methods
         var _addEvents = function() {
 
                 $(window).on({
                     'load': function() {
-                        _setHeight();
-                    },
-                    'resize': function () {
-                        _setHeight();
+
                     }
                 });
 
             },
-            _setHeight = function() {
-
-            },
-            _init = function() {
-                _addEvents();
-                var swiper = new Swiper(_slider, {
+            _initSlider = function() {
+                _swiper = new Swiper(_slider, {
                     slidesPerView: 5,
                     spaceBetween: 0,
                     centeredSlides: true,
                     loop: true,
-                    pagination: _pagination
+                    pagination: _pagination,
+                    breakpoints: {
+                        480: {
+                            slidesPerView: 1
+                        },
+                        640: {
+                            slidesPerView: 2
+                        },
+                        992: {
+                            slidesPerView: 3
+                        },
+                        1200: {
+                            slidesPerView: 4
+                        }
+                    }
                 });
+            },
+            _init = function() {
+                _addEvents();
+                _initSlider();
             };
 
         //public properties

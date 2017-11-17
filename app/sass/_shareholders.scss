@@ -1,17 +1,14 @@
 .shareholders {
-  padding: 134px calc(50% - 600px) 47px;
-  margin-bottom: 21px;
+  padding: 30px 15px;
   background-color: #fff;
 
   &__layout {
-    display: flex;
-    margin-bottom: 27px;
+    margin-bottom: 15px;
   }
 
   &__title {
-    width: calc(100% - 784px);
-    padding-right: 48px;
-    font-size: 36px;
+    margin-bottom: 30px;
+    font-size: 24px;
     color: rgb(68, 70, 85);
     line-height: 1.167;
     @include HKGrotesk-light();
@@ -23,15 +20,12 @@
   }
 
   &__content {
-    width: 784px;
-    column-count: 2;
-    column-gap: 48px;
     color: rgba(68, 70, 85, 0.6);
     @include HKGrotesk-light();
 
     h3 {
       margin-bottom: 6px;
-      font-size: 18px;
+      font-size: 16px;
       letter-spacing: 5.6px;
       color: rgb(68, 70, 85);
       text-transform: uppercase;
@@ -40,8 +34,8 @@
     }
 
     p {
-      margin-bottom: 46px;
-      font-size: 20px;
+      margin-bottom: 22px;
+      font-size: 18px;
       line-height: 1.4;
     }
   }
@@ -49,16 +43,15 @@
   &__logos {
 
     .swiper-wrapper {
-      margin-bottom: 46px;
+      margin-bottom: 22px;
       align-items: center;
     }
 
     .swiper-slide {
       display: flex;
       justify-content: center;
-      //align-items: center;
       width: auto;
-      padding: 20px;
+      padding: 10px;
       text-align: center;
 
       img {
@@ -81,8 +74,8 @@
 
       &-bullet {
         position: relative;
-        width: 18px;
-        height: 18px;
+        width: 10px;
+        height: 10px;
         opacity: 1;
         background: none;
         border: 2px solid #eeeeee;
@@ -90,8 +83,8 @@
 
         &:before {
           @include absoluteCenter();
-          width: 6px;
-          height: 6px;
+          width: 4px;
+          height: 4px;
           opacity: 0;
           background: rgb(241, 150, 0);
           border-radius: 50%;
@@ -117,6 +110,10 @@
 @media (min-width: $tablet-portrait) {
   .shareholders {
 
+    &__content {
+      column-count: 2;
+      column-gap: 30px;
+    }
   }
 }
 @media (min-width: $tablet-landscape) {
@@ -126,7 +123,59 @@
 }
 @media (min-width: $desktop) {
   .shareholders {
+    padding: 134px calc(50% - 600px) 47px;
+    margin-bottom: 21px;
 
+    &__layout {
+      display: flex;
+      margin-bottom: 27px;
+    }
+
+    &__title {
+      width: calc(100% - 784px);
+      padding-right: 48px;
+      margin: 0;
+      font-size: 36px;
+    }
+
+    &__content {
+      width: 784px;
+      column-gap: 48px;
+
+      h3 {
+        margin-bottom: 6px;
+        font-size: 18px;
+      }
+
+      p {
+        margin-bottom: 46px;
+        font-size: 20px;
+      }
+    }
+
+    &__logos {
+
+      .swiper-wrapper {
+        margin-bottom: 46px;
+      }
+
+      .swiper-slide {
+        padding: 20px;
+      }
+
+      .swiper-pagination {
+
+        &-bullet {
+          width: 18px;
+          height: 18px;
+
+          &:before {
+            width: 6px;
+            height: 6px;
+          }
+        }
+      }
+    }
   }
 }
 

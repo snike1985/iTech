@@ -1,0 +1,162 @@
+.program {
+  padding: 30px 0 0;
+
+  &__color1 {
+    color: #29cafd !important;
+    fill: #29cafd !important;
+
+    &:after {
+      border-color: #29cafd !important;
+    }
+  }
+
+  &__color2 {
+    color: #c65cff !important;
+    fill: #c65cff !important;
+
+    &:after {
+      border-color: #c65cff !important;
+    }
+  }
+
+  &__color3 {
+    color: #ff802c !important;
+    fill: #ff802c !important;
+
+    &:after {
+      border-color: #ff802c !important;
+    }
+  }
+
+  &__color4 {
+    color: #83ba3a !important;
+    fill: #83ba3a !important;
+
+    &:after {
+      border-color: #83ba3a !important;
+    }
+  }
+
+  &__content {
+
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: rgb(68, 70, 85);
+    @include HKGrotesk-light();
+
+    span {
+      display: block;
+      font-size: 14px;
+      color: rgba(68, 70, 85, 0.6);
+      line-height: 1.6;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  &__column {
+    position: relative;
+    z-index: 2;
+    font-size: 12px;
+    color: rgb(68, 70, 85);
+
+    p {
+      margin-bottom: 10px;
+      line-height: 1.337;
+    }
+
+    .btn {
+      margin-bottom: 30px;
+    }
+  }
+}
+@media (min-width: $phone-landscape) {
+  .program {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .program {
+
+    &__content {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__column {
+      width: calc(50% - 15px);
+    }
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .program {
+
+  }
+}
+@media (min-width: $desktop) {
+  .program {
+    max-width: 1200px;
+    margin: 0 auto 21px;
+    padding: 98px 0 0;
+
+    &__content {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+
+      &:before {
+        position: absolute;
+        top: 27px;
+        left: -256px;
+        width: 829px;
+        height: 182px;
+        z-index: 1;
+        pointer-events: none;
+        background: url("../img/infrastructureWaves.jpg") no-repeat;
+        content: '';
+      }
+    }
+
+    &__title {
+      margin-bottom: 29px;
+      font-size: 32px;
+      color: rgb(68, 70, 85);
+      @include HKGrotesk-light();
+
+      span {
+        display: block;
+        font-size: 20px;
+        color: rgba(68, 70, 85, 0.6);
+        line-height: 1.6;
+      }
+    }
+
+    &__subtitle {
+      display: block;
+      margin-bottom: 23px;
+      font-size: 22px;
+    }
+
+    &__column {
+      position: relative;
+      z-index: 2;
+      width: calc(50% - 24px);
+      font-size: 18px;
+      color: rgb(68, 70, 85);
+
+      p {
+        margin-bottom: 20px;
+        line-height: 1.337;
+      }
+
+    }
+  }
+}
+

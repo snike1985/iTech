@@ -1,18 +1,149 @@
 .partners {
   padding: 30px 0 0;
 
-  &__layout {
+  &__list {
+    position: relative;
+    overflow: hidden;
+    padding: 30px 15px 0;
+    margin-bottom: 30px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px -20px 30px 0px rgba(0, 0, 0, 0.04);
 
+    &-hoverwave { display: none }
+  }
+
+  &__item {
+    margin: 0 0 30px;
+
+    &-title {
+      display: block;
+      position: relative;
+      z-index: 2;
+      padding: 0 0 30px 0;
+      font-size: 16px;
+      color: rgb(62, 66, 85);
+      line-height: 1.75;
+      @include HKGrotesk-light();
+    }
+
+    &-links {
+      column-count: 2;
+      column-gap: 15px;
+
+      li {
+        display: flex;
+        margin-bottom: 1px;
+      }
+
+      a,
+      a:visited {
+        display: block;
+        position: relative;
+        padding-right: 10px;
+        z-index: 2;
+        font-size: 11px;
+        letter-spacing: 1px;
+        color: rgb(62, 66, 85);
+        text-transform: uppercase;
+        line-height: 2.571;
+        @include HKGrotesk-bold();
+        transition: color .3s ease-in-out;
+
+        &:before {
+          position: absolute;
+          top: 50%;
+          right: 5px;
+          width: 12px;
+          height: 12px;
+          margin-top: -7px;
+          opacity: 0;
+          border: 2px solid #83ba3a;
+          clip: rect(0px, 12px, 9px, 3px);
+          transform: rotate(45deg);
+          box-sizing: border-box;
+          content: '';
+          transition: opacity .3s ease-in-out, right .3s ease-in-out;
+        }
+
+        &:hover {
+          color: #83ba3a;
+
+          &:before {
+            right: 0;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__logos {
+
+    .swiper-wrapper {
+      margin-bottom: 22px;
+      align-items: center;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      width: auto;
+      padding: 10px;
+      text-align: center;
+    }
   }
 }
 @media (min-width: $phone-landscape) {
   .partners {
 
+    &__item {
+
+      &-links {
+        column-count: 3;
+      }
+    }
   }
 }
 @media (min-width: $tablet-portrait) {
   .partners {
 
+    &__list {
+      padding: 60px 30px 34px;
+
+      &-hoverwave {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 829px;
+        height: 182px;
+        margin: 45px 0 0 110px;
+        z-index: 1;
+        opacity: 0;
+        background: url("../img/infrastructureWaves.jpg") no-repeat;
+        pointer-events: none;
+        transition: opacity .3s ease-in-out;
+
+        &.active { opacity: 1 }
+      }
+    }
+
+    &__item {
+
+      &-title {
+        font-size: 24px;
+      }
+
+      &-links {
+        column-gap: 48px;
+
+        a,
+        a:visited {
+          font-size: 14px;
+          letter-spacing: 1.5px;
+        }
+      }
+    }
   }
 }
 @media (min-width: $tablet-landscape) {
@@ -23,6 +154,52 @@
 @media (min-width: $desktop) {
   .partners {
     padding: 98px 0 0;
+
+    &__list {
+      padding: 108px 15px 34px;
+      margin-bottom: 0;
+    }
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto 74px;
+
+      &-title {
+        width: 26%;
+        padding: 5px 48px 0 0;
+      }
+
+      &-links { width: 74% }
+    }
+
+    &__logos {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 45px 0 30px;
+
+      .swiper-wrapper {
+        margin-bottom: 46px;
+      }
+
+      .swiper-slide {
+        padding: 20px;
+      }
+
+      .swiper-pagination {
+
+        &-bullet {
+          width: 18px;
+          height: 18px;
+
+          &:before {
+            width: 6px;
+            height: 6px;
+          }
+        }
+      }
+    }
   }
 }
 

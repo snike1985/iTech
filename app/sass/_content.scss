@@ -1,0 +1,55 @@
+.content {
+  padding: 30px;
+  font-size: 14px;
+  color: rgb(68, 70, 85);
+
+  h2 {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 24px;
+    color: rgb(68, 70, 85);
+    line-height: 1.611;
+    @include HKGrotesk-light();
+
+    span {
+      @include HKGrotesk-bold();
+    }
+  }
+
+  p {
+    margin-bottom: 15px;
+    line-height: 1.34;
+  }
+}
+@media (min-width: $phone-landscape) {
+  .content {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .content {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .content {
+
+  }
+}
+@media (min-width: $desktop) {
+  .content {
+    padding: 66px 153px 78px;
+    font-size: 20px;
+
+    h2 {
+      margin-bottom: 36px;
+      font-size: 36px;
+    }
+
+    p {
+      margin-bottom: 29px;
+      line-height: 1.4;
+    }
+  }
+}
+

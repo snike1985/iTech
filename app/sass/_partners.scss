@@ -120,11 +120,15 @@
         margin: 45px 0 0 110px;
         z-index: 1;
         opacity: 0;
+        transform: translate(-50px, 0);
         background: url("../img/infrastructureWaves.jpg") no-repeat;
         pointer-events: none;
-        transition: opacity .3s ease-in-out;
 
-        &.active { opacity: 1 }
+        &.active {
+          transform: translate(0, 0);
+          opacity: 1;
+          transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+        }
       }
     }
 
